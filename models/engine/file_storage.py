@@ -10,10 +10,10 @@ class FileStorage():
      __file_path = 'file.json'
      __objects = {}
      
-    def all(seff):
+ def all(self):
         """returns the dictionary __objects"""
         return self.__objects
     
-    def new(self, obj):
+ def new(self, obj):
         """ sets in __objects the obj with key <obj class name>.id"""
 
