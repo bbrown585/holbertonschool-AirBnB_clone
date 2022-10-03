@@ -5,6 +5,4 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """Class that store amenity information"""
-
-
-name = ""
+    name = ""
