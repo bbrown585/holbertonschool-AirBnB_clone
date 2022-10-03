@@ -143,8 +143,10 @@ class HBNBCommand(cmd.Cmd):
             key = arg[0] + "." + arg[1]
             storage = models.storage.all()
             if key in storage:
-                setattr(storage[key], arg[2], arg[3])
-                models.storage.save()
+                    setattr(storage[key], arg[2], arg[3])
+                    models.storage.save()
+            else:
+                print("** no instance found **")
 
 
 if __name__ == '__main__':
