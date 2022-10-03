@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
             print("Too many Arguments")
             return False
         else:
-            new_list =[]
+            new_list = []
             storage = models.storage.all()
             if len(args) == 0:
                 for key in storage:
@@ -145,6 +145,7 @@ class HBNBCommand(cmd.Cmd):
             if key in storage:
                 setattr(storage[key], arg[2], arg[3])
                 models.storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
