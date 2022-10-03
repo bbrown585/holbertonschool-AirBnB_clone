@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Base model for Holberton AirBnB project"""
-import uuid
-import json
-import datetime
+from uuid import uuid4
+from datetime import datetime
 import models
 
 
@@ -18,15 +17,16 @@ class BaseModel:
                 elif key == "id":
                     self.id = value
                 elif key == "created_at":
-                    self.created_at = datetime.datetime.strptime(
+                    self.created_at = datetime.strptime(
                         value, timedate_format)
                 elif key == "updated_at":
-                    self.updated_at = datetime.datetime.strptime(
+                    self.updated_at = datetime.strptime(
                         value, timedate_format)
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.today()
-            self.updated_at = datetime.datetime.today()
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self) -> str:
         """String override for BaseModel"""
@@ -35,7 +35,8 @@ class BaseModel:
 
     def save(self):
         """updates (updated_at attribute)to current time"""
-        self.updated_at = datetime.datetime.today()
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary of Class instance"""

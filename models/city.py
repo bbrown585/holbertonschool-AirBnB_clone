@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class State:
+class City(BaseModel):
     """Creates object containg City Information"""
     state_id = ""
     name = ""
