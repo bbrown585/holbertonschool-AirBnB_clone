@@ -247,5 +247,7 @@ Write all those classes that inherit from  `BaseModel`:
         -   `place_id`: string - empty string: it will be the  `Place.id`
         -   `user_id`: string - empty string: it will be the  `User.id`
         -   `text`: string - empty string
+
+
 [Brandon Brown](https://github.com/bbrown585)
 [James Teeters](https://github.com/JamesTeeters)
