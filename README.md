@@ -1,4 +1,109 @@
-# 0x00. AirBnB clone - The console
+# Welcome to the console
+### How to start the console
+ To begin the console, in the terminal window type.
+
+    ./console
+you will be greeted with this prompt.
+
+    (hbnb) 
+next type.
+
+    help
+this will bring up a list of possible commands.
+
+    EOF  all  create  destroy  help  quit  show  update
+using the help command with any command in the list will show a description of the commands function.
+
+    (hbnb) help all
+    Prints string representation of all instances of an Object
+    (hbnb)
+# basic console commands
+## help
+help is used to retrieve a description of a function
+### ex.
+
+    (hbnb) help all
+    Prints string representation of all instances of an Object
+## EOF
+the EOF command is used to exit the command through the end of file method.
+### ex.
+
+    ctrl + D
+## quit
+the quit command exits the console.
+### ex.
+
+    (hbnb) quit
+## empty line
+The empty line command simply returns an empty line to the console by pressing the enter key.
+### ex.
+
+    (hbnb)
+    (hbnb)
+    (hbnb)
+
+
+# Advanced console functions
+## all
+the all function can be used by simply typing
+
+    all
+this will list all current object instances regardless of class
+### ex
+
+    (hbnb)all
+    ["[User] (adc84863-9891-4c99-b063-04c5483fc2b3) {'id': 'adc84863-9891-4c99-b063-04c5483fc2b3', 'created_at': datetime.datetime(2022, 10, 3, 14, 46, 36, 118633), 'updated_at': datetime.datetime(2022, 10, 3, 14, 46, 36, 118735)}", 
+    "[BaseModel] (e34d988b-e3c3-41b1-ac1f-3cc283bc91c8) {'id': 'e34d988b-e3c3-41b1-ac1f-3cc283bc91c8', 'created_at': datetime.datetime(2022, 10, 7, 10, 22, 52, 660445), 'updated_at': datetime.datetime(2022, 10, 7, 10, 22, 52, 660498)}", 
+    "[Place] (c8f4c5bd-4e72-411c-bb47-e7b101f3738b) {'id': 'c8f4c5bd-4e72-411c-bb47-e7b101f3738b', 'created_at': datetime.datetime(2022, 10, 7, 10, 23, 38, 127013), 'updated_at': datetime.datetime(2022, 10, 7, 10, 23, 38, 127036)}", 
+    "[User] (a5d6285b-0014-4458-a00a-f92a11fc4493) {'id': 'a5d6285b-0014-4458-a00a-f92a11fc4493', 'created_at': datetime.datetime(2022, 10, 7, 10, 23, 51, 165427), 'updated_at': datetime.datetime(2022, 10, 7, 10, 23, 51, 165456)}"]
+The user can also specify the Class the wish to view
+### ex.
+
+    (hbnb)all User
+    ["[User] (adc84863-9891-4c99-b063-04c5483fc2b3) {'id': 'adc84863-9891-4c99-b063-04c5483fc2b3', 'created_at': datetime.datetime(2022, 10, 3, 14, 46, 36, 118633), 'updated_at': datetime.datetime(2022, 10, 3, 14, 46, 36, 118735)}", 
+    "[User] (a5d6285b-0014-4458-a00a-f92a11fc4493) {'id': 'a5d6285b-0014-4458-a00a-f92a11fc4493', 'created_at': datetime.datetime(2022, 10, 7, 10, 23, 51, 165427), 'updated_at': datetime.datetime(2022, 10, 7, 10, 23, 51, 165456)}"]
+## create
+the create function is used to create a new object instance.
+this command requires a Class name.
+### ex.
+
+    (hbnb)create Basemodel
+    dcd56982-309a-4045-b337-b2e28a82e0c3
+The unique instance id is the =n shown to the user as in the example above.
+
+## destroy
+the destroy command is used to destroy an instance of an object.
+this command requires the Class name and instance id
+### ex.
+
+    (hbnb)destroy Basemodeldcd56982-309a-4045-b337-b2e28a82e0c3
+    (hbnn)
+At first it appears that nothing has happened, but using the all or show command will reveal the instance has been removed.
+## show
+The show command is use to show a specific instance of an object.
+this command requires the Class name and instance id.
+### ex.
+
+    (hbnb) show BaseModel dcd56982-309a-4045-b337-b2e28a82e0c3
+    [BaseModel] (dcd56982-309a-4045-b337-b2e28a82e0c3) {'id': 'dcd56982-309a-4045-b337-b2e28a82e0c3', 'created_at': datetime.datetime(2022, 10, 7, 10, 29, 55, 915062), 'updated_at': datetime.datetime(2022, 10, 7, 10, 29, 55, 915209)}
+    (hbnb)
+unlike the all command the show command only shows the specified instance of an object.
+## update
+The update command is used to update or add an attribute to an object instance.
+This command take 4 parameters the class name, the instance id, the attribute name, and the attribute value
+### ex.
+
+    (hbnb) update BaseModel dcd56982-309a-4045-b337-b2e28a82e0c3 new_attribute 42
+    (hbnb) show BaseModel dcd56982-309a-4045-b337-b2e28a82e0c3
+    [BaseModel] (dcd56982-309a-4045-b337-b2e28a82e0c3) {'id': 'dcd56982-309a-4045-b337-b2e28a82e0c3', 'created_at': datetime.datetime(2022, 10, 7, 10, 29, 55, 915062), 'updated_at': datetime.datetime(2022, 10, 7, 10, 29, 55, 915209),
+     'new_attribute': '42'
+Using the show command we can see the "new_attribute" now equals 42.
+    
+    
+
+
+# Holberton AirBnB Project Overview
+## 0x00. AirBnB clone - The console
 ### 0. README, AUTHORS
 -   Write a  `README.md`:
     -   description of the project
@@ -247,7 +352,3 @@ Write all those classes that inherit from  `BaseModel`:
         -   `place_id`: string - empty string: it will be the  `Place.id`
         -   `user_id`: string - empty string: it will be the  `User.id`
         -   `text`: string - empty string
-
-
-[Brandon Brown](https://github.com/bbrown585)
-[James Teeters](https://github.com/JamesTeeters)
