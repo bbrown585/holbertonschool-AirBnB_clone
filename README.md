@@ -14,9 +14,6 @@ this will bring up a list of possible commands.
     EOF  all  create  destroy  help  quit  show  update
 using the help command with any command in the list will show a description of the commands function.
 
-    (hbnb) help all
-    Prints string representation of all instances of an Object
-    (hbnb)
 # basic console commands
 ## help
 help is used to retrieve a description of a function
