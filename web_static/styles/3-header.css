@@ -6,9 +6,9 @@ header {
 	border-bottom: 1px solid #CCCCCC;
 }
 header .logo {
-	background: url("../images/logo.png") no-repeat;
-	left: 20px;
+	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	vertical-align: middle;
 	height: 100%;
-	top: 7%;
-	position: relative;
+	background-position: 20px;
 }
