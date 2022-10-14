@@ -7,3 +7,7 @@ footer {
 	text-align: center;
 	line-height: 30px;
 }
+footer p {
+    text-align: center;
+    margin: 20px;
+}
