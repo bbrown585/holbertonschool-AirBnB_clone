@@ -1,8 +1,15 @@
-body {
-	margin:0px;
-	padding:0px;
-
+p{
+	top: 10%;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	color: #484848;
 	font-size: 14px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
 }
+body {
+	margin:0px;
+	padding:0px;
+}
+
